@@ -1,0 +1,59 @@
+# Sostituisci con il nome effettivo della cartella del tuo progetto
+name: progetto_finale_test # <-- MODIFICA QUESTO!
+description: "Applicazione Flutter per la gestione di preventivi."
+publish_to: 'none' # Lascia 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0' # Adatta se necessario
+
+# Dipendenze richieste dall'applicazione.
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.6 # O la versione generata
+  file_saver: ^0.2.12 
+  # Dipendenze che abbiamo aggiunto:
+  http: ^1.2.1 # Per le chiamate API a Google Maps
+  path_provider: ^2.1.3
+  share_plus: ^11.0.0 # Per condivisione TXT (verifica ultima versione)
+  # --- PDF e Printing RIMOSSI ---
+  # pdf: ^...
+  # printing: ^...
+
+# Dipendenze usate solo per lo sviluppo e i test.
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  # Linter per l'analisi statica del codice.
+  flutter_lints: ^5.0.0 # O la versione generata
+
+  # Package per generare le icone di avvio
+  flutter_launcher_icons: ^0.14.3 # Verifica l'ultima versione
+
+# Configurazione specifica per il framework Flutter.
+flutter:
+
+  uses-material-design: true
+
+  # Elenco degli assets (risorse statiche) inclusi nell'app.
+  assets:
+    
+    # Dichiara la cartella contenente l'icona (o il file specifico)
+    # Assicurati che questo percorso esista nel tuo progetto!
+    - assets/icon/
+    - assets/config/tariffe.json
+    # - assets/images/ # Altre immagini
+
+# Configurazione per flutter_launcher_icons
+# (Questa sezione genera le icone quando esegui 'flutter pub run flutter_launcher_icons')
+flutter_launcher_icons:
+  android: true # Genera icone per Android
+  ios: true # Genera icone per iOS
+  # Assicurati che questo percorso punti alla TUA immagine icona!
+  image_path: "assets/icon/app_icon.png" # O app_icon.jpg
+  # Opzionale: se vuoi icone adattive per Android più recenti
+  # adaptive_icon_background: "#303030" # Usa un colore di sfondo simile al tema
+  # adaptive_icon_foreground: "assets/icon/app_icon_foreground.png" # Immagine separata per il primo piano
